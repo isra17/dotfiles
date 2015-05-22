@@ -1,0 +1,17 @@
+stty -ixon
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+export VISUAL="/usr/bin/vim -p -X"
+export EDITOR="/usr/bin/vim -p -X"
+
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/usr/bin/vendor_perl
+export PATH=$PATH:/usr/bin/core_perl
+export PATH=$PATH:/home/isra/.gem/ruby/2.1.0/bin/
+export PATH=$PATH:/home/isra/.gem/ruby/2.2.0/bin/
+
+alias top=htop

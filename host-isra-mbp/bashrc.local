@@ -1,0 +1,8 @@
+export CLICOLOR=1
+export VISUAL="mvim -v -p -X"
+export EDITOR="mvim -v -p -X"
+alias vim='mvim -v'
+alias vi='mvim -v'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

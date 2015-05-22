@@ -21,11 +21,6 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'flazz/vim-colorschemes'
 
-if system("lsb_release -is") !~? "^arch"
-  "Arch use AUR package
-  Plugin 'Valloric/YouCompleteMe'
-endif
-
 call vundle#end()            " required
 filetype plugin indent on    " required
 

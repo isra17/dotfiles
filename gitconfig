@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[core]
+# Please adapt and uncomment the following lines:
+user = isra17
+email = isra017@gmail.com
+[user]
+  name = isra17
+  email = isra017@gmail.com
+[push]
+  default = simple
+[pull]
+  rebase = true
+[alias]
+  st = status -b -s
+  g = grep -n --color
