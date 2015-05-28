@@ -28,5 +28,3 @@ function color_my_prompt {
 }
 color_my_prompt
 
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
