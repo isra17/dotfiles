@@ -73,3 +73,5 @@ set laststatus=2
 set mouse=a
 
 set wildignore+=__pycache__,*.pyc,node_modules
+
+source ~/.vimrc.local
