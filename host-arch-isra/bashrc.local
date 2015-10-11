@@ -17,4 +17,4 @@ export PATH=$PATH:/home/isra/bin/
 
 alias top=htop
 
-cowsay `fortune`
+cowsay $(fortune)

@@ -25,6 +25,8 @@ set shiftwidth=2
 set autoread
 set noswapfile
 
+let mapleader = ' '
+
 autocmd BufWritePre * :%s/\s\+$//e
 
 let g:BASH_Ctrl_j = 'off'
