@@ -20,6 +20,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'rust-lang/rust.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'soramugi/auto-ctags.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'lyuts/vim-rtags'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

@@ -35,6 +35,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+let mapleader=" "
+
 map <C-n> :NERDTreeToggle<CR>
 map <F2> :mksession! ~/vim_session <cr>
 map <F3> :source ~/vim_session <cr>
@@ -65,8 +67,12 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_enable_balloons = 1
 
 " ycm
-let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
+" auto-ctags
+let g:auto_ctags = 1
+let g:auto_ctags_directory_list = ['.git', '.svn']
 
 set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h\ \ %r%y\ \ %#error#%{&mod?'\ \ \ \ \ \ \ \ \ File\ Modified\ \ \ \ \ \ \ \ \ ':''}%*%=%c,%l/%L\ %P
 set laststatus=2
@@ -74,6 +80,20 @@ set laststatus=2
 " Support mouse
 set mouse=a
 
-set wildignore+=__pycache__,*.pyc,node_modules
+set wildignore+=__pycache__,*.pyc,node_modules,_build,deps
+
+function! Csc()
+  cscope find c <cword>
+  copen
+endfunction
+command! Csc call Csc()
+
+map <leader>] :Csc<cr>
+
+if has("cscope")
+  if filereadable("cscope.out")
+    cs add cscope.out
+  endif
+endif
 
 source ~/.vimrc.local
