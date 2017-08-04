@@ -1,5 +1,7 @@
 stty -ixon
 
+[[ -z "$TMUX" ]] && exec tmux
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
@@ -15,6 +17,20 @@ export PATH=$PATH:/home/isra/.gem/ruby/2.1.0/bin/
 export PATH=$PATH:/home/isra/.gem/ruby/2.2.0/bin/
 export PATH=$PATH:/home/isra/bin/
 
+export CARGO_HOME=/home/isra/.cargo
+export RUST_SRC_PATH=/home/isra/devel/rust/src
+export PATH=$PATH:$CARGO_HOME/bin
+
+# dep: htop
 alias top=htop
 
+# dep: git@github.com:isra17/mix-completion.git
+# Elixir's mix autocompletion
+source ~/.bash/mix-completion/mix-completion.bash
+
+# dep: hub
+# hub git's alias
+eval "$(hub alias -s)"
+
 cowsay $(fortune)
+

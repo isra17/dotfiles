@@ -1,0 +1,1 @@
+/home/isra/.dotfiles/tmux/tmux-scroll-copy-mode//README.md

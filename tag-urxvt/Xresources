@@ -10,7 +10,7 @@ URxvt*scrollBar: false
 URxvt*scrollWithBuffer: false
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
-URxvt*font: xft:Inconsolata\\-g:size=11
+URxvt*font: xft:Inconsolata\\-g:size=13
 URxvt*iconFile: /usr/share/icons/gnome/32x32/apps/xfce-terminal.png
 URxvt*termName: screen-256color
 

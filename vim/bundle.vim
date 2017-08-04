@@ -26,7 +26,7 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'lyuts/vim-rtags'
 "Plugin 'davidhalter/jedi-vim'
 Plugin 'racer-rust/vim-racer'
-Plugin 'shougo/deoplete'
+Plugin 'Shougo/deoplete.nvim'
 
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
