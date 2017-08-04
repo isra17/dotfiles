@@ -1,11 +1,10 @@
-# This is Git's per-user configuration file.
 [core]
-# Please adapt and uncomment the following lines:
-user = isra17
-email = isra017@gmail.com
+  user = isra17
+  email = isra017@gmail.com
 [user]
   name = isra17
   email = isra017@gmail.com
+  signingkey = 1CC41BDA25C59CC730AEEBF2FD82807A81EFFB7C
 [push]
   default = simple
 [pull]
@@ -13,3 +12,9 @@ email = isra017@gmail.com
 [alias]
   st = status -b -s
   g = grep -n --color
+  l = log --graph --decorate --oneline
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+[commit]
+  gpgsign = true

@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+[[ -f /usr/local/etc/bash_completion ]] && . /usr/local/etc/bash_completion
 [[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
 
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
