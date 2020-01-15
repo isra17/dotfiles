@@ -81,3 +81,6 @@ URxvt*saveLines: 0
 !! white dark/light
 *color7: #eee8d5
 *color15: #fdf6e3
+
+!! xscreensaver settings
+xscreensaver.newLoginCommand: dm-tool switch-to-greeter

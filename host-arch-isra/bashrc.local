@@ -4,6 +4,9 @@ stty -ixon
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias vim=nvim
+
+export GPG_TTY=$(tty)
 
 export VISUAL="/usr/bin/vim -p -X"
 export EDITOR="/usr/bin/vim -p -X"
@@ -15,8 +18,10 @@ export PATH=$PATH:/usr/bin/vendor_perl
 export PATH=$PATH:/usr/bin/core_perl
 export PATH=$PATH:/home/isra/.gem/ruby/2.1.0/bin/
 export PATH=$PATH:/home/isra/.gem/ruby/2.2.0/bin/
+export PATH=$PATH:/home/isra/.gem/ruby/2.5.0/bin
 export PATH=$PATH:/home/isra/bin/
-
+export PATH=$PATH:/home/isra/.local/bin/
+export PYTHONBREAKPOINT=ipdb.set_trace
 export CARGO_HOME=/home/isra/.cargo
 export RUST_SRC_PATH=/home/isra/devel/rust/src
 export PATH=$PATH:$CARGO_HOME/bin

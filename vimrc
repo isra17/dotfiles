@@ -1,5 +1,7 @@
 source ~/.vim/bundle.vim
 
+set shell=bash\ --login
+
 set number
 
 " Allow hidden buffers, don't limit to 1 file per window/split
@@ -26,6 +28,7 @@ set smarttab
 
 set breakindent
 set showbreak=\\\\\
+set conceallevel=0
 
 set autoread
 set noswapfile
@@ -42,13 +45,20 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Someone though it would be a good idea to bind stuff to <C-c>
+let g:omni_sql_no_default_maps = 1
+inoremap jk <esc>
+inoremap <c-c> <esc>
+vnoremap <c-c> <esc>
+
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
 map <C-n> :NERDTreeToggle<CR>
 map <F2> :mksession! ~/vim_session <cr>
 map <F3> :source ~/vim_session <cr>
-map <leader>b :make<cr>
+
+autocmd FileType python nnoremap <LocalLeader>f :0,$!python -m yapf<CR>
 
 map cn <esc>:cn<cr>
 map cp <esc>:cp<cr>
@@ -58,6 +68,7 @@ let g:NERDTreeChDirMode       = 2
 let g:NERDTreeRespectWildIgnore = 1
 
 colorscheme solarized
+set bg=dark
 
 " Command-T
 nnoremap <silent> <C-p> :CommandT<CR>
@@ -102,8 +113,16 @@ set mouse=a
 " Rust
 set hidden
 let g:racer_cmd = "/Users/isra17/.cargo/bin/racer"
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
 let g:rustfmt_fail_silently = 1
+
+" hledger
+let g:ledger_bin = "hledger"
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 set wildignore+=__pycache__,*.pyc,node_modules,_build,deps
 
@@ -113,12 +132,35 @@ function! Csc()
 endfunction
 command! Csc call Csc()
 
-map <leader>] :Csc<cr>
 
 if has("cscope")
   if filereadable("cscope.out")
     cs add cscope.out
   endif
 endif
+
+" Ale linter
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
+
+" Jedi
+let g:jedi#completions_enabled = 0
+fu GotoImportCWord()
+  let l:cword = expand("<cfile>")
+  execute "Pyimport " . l:cword
+endfu
+
+" Leader mapping
+map <leader>b :make<cr>
+map <leader>] :Csc<cr>
+map <leader>i :call GotoImportCWord()<cr>
+
+" json conceal clash with indent
+let g:vim_json_conceal = 0
+
 
 source ~/.vimrc.local

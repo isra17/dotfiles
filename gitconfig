@@ -1,6 +1,7 @@
 [core]
   user = isra17
   email = isra017@gmail.com
+  signingkey = 1CC41BDA25C59CC730AEEBF2FD82807A81EFFB7C
 [user]
   name = isra17
   email = isra017@gmail.com
@@ -12,8 +13,12 @@
   st = status -b -s
   g = grep -n --color
   l = log --graph --decorate --oneline
+  fix = !git add -u && git absorb && git rebase -i --autosquash origin/master
+  p = !git push -u origin $(git branch --show-current)
 [merge]
   tool = vimdiff
   conflictstyle = diff3
 [commit]
   gpgsign = true
+[fetch]
+	prune = true
