@@ -30,3 +30,5 @@
 [delta]
   side-by-side = true
 
+[log]
+	mailmap = true

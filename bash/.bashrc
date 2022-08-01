@@ -23,6 +23,7 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]$\[\e[m\] '
 
 export PATH=$HOME/bin:$PATH
+export PYRO_PATH="$HOME/flared/pyro/"
 
 function color_my_prompt {
     local __user_and_host="\[\033[0;32m\]\u@mbp"

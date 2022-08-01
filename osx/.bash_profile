@@ -11,3 +11,5 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
 fi
 if [ -e /Users/isra17/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/isra17/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+function gam() { "/Users/isra17/bin/gam/gam" "$@" ; }

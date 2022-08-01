@@ -14,6 +14,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 "
 " Bundle of colorscheme.
 Plug 'overcache/NeoSolarized'
+Plug 'ishan9299/nvim-solarized-lua'
 
 " FZF for fuzzy browsing and more.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
