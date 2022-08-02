@@ -5,7 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-[[ -f /usr/local/etc/bash_completion ]] && . /usr/local/etc/bash_completion
 [[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
 
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -38,10 +37,6 @@ color_my_prompt
 
 alias grep="grep --color"
 alias c="(cd \$(git rev-parse --show-toplevel) && bin/format && bin/mypy && git commit)"
-
-function lb() {
-    vim /keybase/private/isra17/logbook/$(date '+%Y-%m-%d').md
-}
 
 shopt -s histappend
 shopt -s checkwinsize

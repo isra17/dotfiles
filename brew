@@ -1,0 +1,39 @@
+# Desktop Utilities
+## Cloud drive
+--cask dropbox
+## Password Manager
+--cask keepassxc
+## Rebind keyboard
+--cask karabiner-elements
+## Keyboard management
+--cask obinskit
+
+# Communication
+## Chats
+--cask slack
+--cask keybase
+
+# CLI
+## Manage dotfiles
+stow
+## Terminal
+--cask alacritty
+tmux
+reattach-to-user-namespace
+## editor
+nvim
+
+# Development
+## dev tools
+awscli
+kubectl
+git
+gpg
+bash
+ripgrep
+--cask docker
+## Python
+pyenv
+pyenv-virtualenv
+## Go
+go

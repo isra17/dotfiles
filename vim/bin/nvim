@@ -1,10 +1,10 @@
 #!/bin/bash
 if [ -z "$VIRTUAL_ENV" ]; then
   if [ -e "pyproject.toml" ]; then
-    POETRY_ENV="$(poetry env info -p)"
+    POETRY_ENV="$(which poetry && poetry env info -p)"
     if [[ "$?" = "0" ]]; then
       VIRTUAL_ENV=$POETRY_ENV
     fi
   fi
 fi
-VIRTUAL_ENV="$VIRTUAL_ENV" PYENV_VERSION=nvim exec /usr/local/bin/nvim "$@"
+VIRTUAL_ENV="$VIRTUAL_ENV" PYENV_VERSION=nvim exec $(brew --prefix nvim)/bin/nvim "$@"

@@ -4,6 +4,8 @@ export EDITOR="nvim"
 alias vim='nvim'
 alias vi='nvim'
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -26,10 +28,10 @@ function start_docker {
 }
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/isra17/Applications/gcloud/google-cloud-sdk/path.bash.inc' ]; then source '/Users/isra17/Applications/gcloud/google-cloud-sdk/path.bash.inc'; fi
+if [ -f "$HOME/Applications/gcloud/google-cloud-sdk/path.bash.inc" ]; then source "$HOME/Applications/gcloud/google-cloud-sdk/path.bash.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/isra17/Applications/gcloud/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/isra17/Applications/gcloud/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f "$HOME/Applications/gcloud/google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/Applications/gcloud/google-cloud-sdk/completion.bash.inc"; fi
 
 # source ~/devel/emsdk/emsdk_env.sh
 
@@ -106,17 +108,4 @@ function alias_completion {
     source "$tmp_file" && rm -f "$tmp_file"
 }; alias_completion
 
-_work()
-{
-  _script_commands=$(ls ~/flared/pyro/worktree)
-
-  local cur prev
-  COMPREPLY=()
-  cur="${COMP_WORDS[COMP_CWORD]}"
-  COMPREPLY=( $(compgen -W "${_script_commands}" -- ${cur}) )
-
-  return 0
-}
-complete -o nospace -F _work work
-
-# [[ -z "$TMUX" ]] && exec tmux
+[[ -z "$TMUX" ]] && exec tmux
