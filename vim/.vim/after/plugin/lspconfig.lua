@@ -1,5 +1,5 @@
 local nvim_lsp = require('lspconfig')
-vim.lsp.set_log_level("debug")
+-- vim.lsp.set_log_level("info")
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -30,7 +30,7 @@ end
 
 local servers = { 'jedi_language_server' }
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {

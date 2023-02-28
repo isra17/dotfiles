@@ -11,6 +11,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+[[ -f /usr/local/etc/bash_completion ]] && . /usr/local/etc/bash_completion
+[[ -f ~/local/bash_completion/git.bash ]] && . ~/local/bash_completion/git.bash
+
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
 export LESS_TERMCAP_me=$'\E[0m'           # end mode
@@ -22,7 +25,7 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 export PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]$\[\e[m\] '
 
 export PATH=$HOME/bin:$PATH
-export PYRO_PATH="$HOME/flared/pyro/"
+#export PYRO_PATH="$HOME/flared/pyro/"
 
 function color_my_prompt {
     local __user_and_host="\[\033[0;32m\]\u@mbp"

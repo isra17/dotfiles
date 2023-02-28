@@ -44,4 +44,8 @@ Plug 'rust-lang/rust.vim'
 " Better Vue support.
 Plug 'posva/vim-vue'
 
+" Better Terraform support.
+Plug 'hashivim/vim-terraform'
+
+
 call plug#end()

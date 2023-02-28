@@ -8,6 +8,8 @@
 ## Keyboard management
 --cask obinskit
 
+--cask libreoffice
+
 # Communication
 ## Chats
 --cask slack
@@ -27,11 +29,16 @@ nvim
 ## dev tools
 awscli
 kubectl
+terraform
 git
 gpg
 bash
 ripgrep
+jq
+git-delta
+watch
 --cask docker
+--cask lens
 ## Python
 pyenv
 pyenv-virtualenv

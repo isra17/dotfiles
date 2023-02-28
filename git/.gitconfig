@@ -9,6 +9,7 @@
   signingkey = 1CC41BDA25C59CC730AEEBF2FD82807A81EFFB7C
 [push]
   default = simple
+  autoSetupRemote = true
 [pull]
   rebase = true
 [alias]

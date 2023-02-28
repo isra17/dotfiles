@@ -1,0 +1,22 @@
+#!/bin/bash
+set -ex
+
+if [[ -n "${VIRTUAL_ENV}" ]]; then
+  echo "Already in venv"
+  exit 1;
+fi
+
+project=${1:-pyro}
+
+case "${project}" in
+  p|py|pyr|pyro)
+    cd ~/flared/pyro
+    source venv/bin/activate
+    exec $SHELL
+    ;;
+  s|sa|sat|satu|satur|saturn)
+    cd ~/devel/saturn
+    poetry shell
+    exec $SHELL
+    ;;
+esac
