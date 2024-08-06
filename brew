@@ -6,7 +6,7 @@
 ## Rebind keyboard
 --cask karabiner-elements
 ## Keyboard management
---cask obinskit
+# --cask obinskit
 
 --cask libreoffice
 
