@@ -4,7 +4,6 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
 [[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
 
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -13,6 +12,9 @@ fi
 
 [[ -f /usr/local/etc/bash_completion ]] && . /usr/local/etc/bash_completion
 [[ -f ~/local/bash_completion/git.bash ]] && . ~/local/bash_completion/git.bash
+
+# GPG Agent
+export GPG_TTY=$(tty)
 
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
