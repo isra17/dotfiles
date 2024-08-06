@@ -1,5 +1,5 @@
 " Open Fuzzy file window (FZF)
-nnoremap <silent> <C-p> :execute "GFiles -- " . $CWD<CR>
+nnoremap <silent> <C-p> :execute "GFiles -- " . getcwd()<CR>
 
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)

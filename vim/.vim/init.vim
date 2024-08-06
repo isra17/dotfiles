@@ -46,7 +46,6 @@ set nowritebackup
 
 " Colorscheme!
 set termguicolors
-colorscheme NeoSolarized
 set pumblend=5
 
 " Status line

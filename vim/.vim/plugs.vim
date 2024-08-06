@@ -13,8 +13,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'lukas-reineke/indent-blankline.nvim'
 "
 " Bundle of colorscheme.
-Plug 'overcache/NeoSolarized'
-Plug 'ishan9299/nvim-solarized-lua'
+Plug 'maxmx03/solarized.nvim'
 
 " FZF for fuzzy browsing and more.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

@@ -51,3 +51,6 @@ export HISTCONTROL=ignoreboth
 export HISTIGNORE='ls:bg:fg:history'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Created by `pipx`
+export PATH="$PATH:$HOME/.local/bin"
