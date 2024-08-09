@@ -19,6 +19,12 @@
   p = push
   wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
   stat = !git diff --stat $(git merge-base HEAD \"${REVIEW_BASE:-master}\")
+	next = stack next
+	prev = stack previous
+	reword = stack reword
+	amend = stack amend
+	sync = stack sync
+	run = stack run
 [merge]
   tool = vimdiff
   conflictstyle = diff3

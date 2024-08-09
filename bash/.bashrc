@@ -54,3 +54,4 @@ export HISTIGNORE='ls:bg:fg:history'
 
 # Created by `pipx`
 export PATH="$PATH:$HOME/.local/bin"
+. "$HOME/.cargo/env"

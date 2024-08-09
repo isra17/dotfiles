@@ -24,3 +24,4 @@ fi
 
 # Created by `pipx` on 2024-08-06 01:08:59
 export PATH="$PATH:/Users/israelhalle/.local/bin"
+. "$HOME/.cargo/env"

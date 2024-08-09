@@ -1,5 +1,8 @@
 call plug#begin(stdpath('data') . '/plugged')
 
+" Lib with helpers func.
+Plug 'nvim-lua/plenary.nvim'
+
 " Better string substitution preserving case (:S)
 Plug 'tpope/vim-abolish'
 

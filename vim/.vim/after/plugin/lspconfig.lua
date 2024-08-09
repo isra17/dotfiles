@@ -28,7 +28,7 @@ local on_attach = function(client, bufnr)
 
 end
 
-local servers = { 'jedi_language_server' }
+local servers = { 'pyright' }
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
@@ -39,5 +39,16 @@ for _, lsp in ipairs(servers) do
       debounce_text_changes = 150,
     },
     capabilities = capabilities,
+    before_init = function(params, config)
+      local Path = require "plenary.path"
+      local venv_dirs = {"venv", ".venv"}
+      for i, venv_dir in ipairs(venv_dirs) do
+        local venv = Path:new((config.root_dir:gsub("/", Path.path.sep)), venv_dir)
+        if venv:joinpath("bin"):is_dir() then
+          config.settings.python.pythonPath = tostring(venv:joinpath("bin", "python"))
+          break
+        end
+      end
+    end
   }
 end

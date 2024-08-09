@@ -1,15 +1,17 @@
-vim.cmd [[highlight hl-IblIndent guifg=#073642 gui=nocombine]]
+local highlight = {
+  "Whitespace",
+  "CursorColumn",
+}
 
 require("ibl").setup {
-  indent = {
-    char = "┊",
+  indent = { highlight = highlight, char = "" },
+  whitespace = {
+    highlight = highlight,
+    remove_blankline_trail = false,
   },
-  scope = {
-    enabled = false,
-  },
+  scope = { enabled = false },
   exclude = {
     filetypes = {"help", "nerdtree", "fzf"},
     buftypes = {"terminal"},
   },
 }
-

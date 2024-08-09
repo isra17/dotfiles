@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exec bash $HOME/flared/pyro/carbon/bin/kubectl-production "$@"
