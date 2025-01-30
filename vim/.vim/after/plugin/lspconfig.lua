@@ -1,3 +1,4 @@
+local Path = require "plenary.path"
 local nvim_lsp = require('lspconfig')
 -- vim.lsp.set_log_level("info")
 
@@ -28,27 +29,47 @@ local on_attach = function(client, bufnr)
 
 end
 
-local servers = { 'pyright' }
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    },
-    capabilities = capabilities,
-    before_init = function(params, config)
-      local Path = require "plenary.path"
-      local venv_dirs = {"venv", ".venv"}
-      for i, venv_dir in ipairs(venv_dirs) do
-        local venv = Path:new((config.root_dir:gsub("/", Path.path.sep)), venv_dir)
-        if venv:joinpath("bin"):is_dir() then
-          config.settings.python.pythonPath = tostring(venv:joinpath("bin", "python"))
+function find_venv(root_dir)
+  local venv_dirs = {"venv", ".venv"}
+  for i, venv_dir in ipairs(venv_dirs) do
+    local venv = Path:new(root_dir, venv_dir)
+
+    if venv:joinpath("bin"):is_dir() then
+      return tostring(venv:joinpath("bin", "python"))
+    end
+  end
+end
+
+nvim_lsp.pyright.setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  capabilities = capabilities,
+  before_init = function(params, config)
+    local venv = find_venv(config.root_dir)
+    print(vim.inspect(venv))
+    if venv ~= nil then
+      config.settings.python.pythonPath = venv
+    else
+      for root_dir in vim.fs.parents(config.root_dir) do
+        venv = find_venv(root_dir)
+        if venv ~= nil then
+          config.settings.python.pythonPath = venv
           break
         end
       end
     end
-  }
-end
+  end
+}
+
+nvim_lsp.terraformls.setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  capabilities = capabilities,
+}
