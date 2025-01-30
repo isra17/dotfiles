@@ -1,5 +1,6 @@
 " Load plugins
-runtime ./plugs.vim
+lua require('config')
+" runtime ./plugs.vim
 
 "=============================================
 "======= Simple, vanilla configuration =======
@@ -86,6 +87,3 @@ runtime ./maps.vim
 
 " Strip whitespaces at end of lines.
 autocmd BufWritePre * :%s/\s\+$//e
-
-" Load lua config
-lua require('config')
