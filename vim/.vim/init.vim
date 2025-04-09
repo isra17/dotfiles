@@ -1,6 +1,6 @@
 " Load plugins
-lua require('config')
-" runtime ./plugs.vim
+" lua require('config')
+runtime ./plugs.vim
 
 "=============================================
 "======= Simple, vanilla configuration =======
